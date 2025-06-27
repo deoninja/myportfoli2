@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 
 import Resume from './pages/resume'
 import Index from './pages/Index'
-import { Analytics } from "@vercel/analytics/react"
 import Chatbot from './components/Chatbot';
 
 import {
@@ -33,7 +32,6 @@ function App() {
 
     </Router>
     <Chatbot />
-    <Analytics />
     </>
   );
 }
