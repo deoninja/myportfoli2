@@ -114,23 +114,23 @@ function Chatbot() {
 
   return (
     <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50">
-      <div className={`${isOpen ? 'block' : 'hidden'} w-full sm:w-80 bg-white rounded-xl shadow-xl overflow-hidden max-w-[90vw]`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} w-full sm:w-80 bg-white dark:bg-darkBackground rounded-xl shadow-xl overflow-hidden max-w-[90vw]`}>
         <div className="bg-blue-600 text-white p-3 sm:p-4 flex justify-between items-center">
           <h3 className="font-bold text-sm sm:text-base">Resume AI Assistant</h3>
           <button onClick={() => setIsOpen(false)} className="text-white hover:text-blue-200">
             <FaTimes />
           </button>
         </div>
-        <div ref={chatRef} className="h-48 sm:h-64 p-3 sm:p-4 overflow-y-auto bg-gray-50 space-y-2 sm:space-y-3">
+        <div ref={chatRef} className="h-48 sm:h-64 p-3 sm:p-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 space-y-2 sm:space-y-3">
           {messages.length === 0 && (
-            <div className="text-center text-gray-500 text-xs sm:text-sm py-4">
+            <div className="text-center text-gray-500 dark:text-gray-400 text-xs sm:text-sm py-4">
               Ask me about my experience, skills, or projects!
             </div>
           )}
           {messages.map((msg, index) => (
             <div key={index} className="chatbot-message">
               <div className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`${msg.sender === 'user' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'} rounded-lg px-2 sm:px-3 py-1 sm:py-2 max-w-[80%] text-xs sm:text-sm`}>
+                <div className={`${msg.sender === 'user' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-darkText'} rounded-lg px-2 sm:px-3 py-1 sm:py-2 max-w-[80%] text-xs sm:text-sm`}>
                   {msg.text}
                 </div>
               </div>
@@ -142,7 +142,7 @@ function Chatbot() {
                 <button
                   key={index}
                   onClick={() => sendMessage(question)}
-                  className="w-full text-left p-1 sm:p-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded text-xs sm:text-sm transition"
+                  className="w-full text-left p-1 sm:p-2 bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-blue-300 rounded text-xs sm:text-sm transition"
                 >
                   {question}
                 </button>
@@ -150,7 +150,7 @@ function Chatbot() {
             </div>
           )}
         </div>
-        <div className="p-2 sm:p-3 border-t bg-gray-100">
+        <div className="p-2 sm:p-3 border-t bg-gray-100 dark:bg-gray-900 dark:border-gray-700">
           <div className="flex">
             <input
               type="text"
@@ -158,7 +158,7 @@ function Chatbot() {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && sendMessage(input)}
               placeholder="Type your question..."
-              className="flex-1 border rounded-l-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-1 border rounded-l-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
             />
             <button onClick={() => sendMessage(input)} className="bg-blue-500 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-r-lg hover:bg-blue-600 transition">
               <FaPaperPlane />
