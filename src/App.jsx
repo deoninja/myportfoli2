@@ -1,4 +1,4 @@
-import Resume from './pages/resume'
+import Resume from './pages/Resume';
 import Index from './pages/Index'
 import Chatbot from './components/Chatbot';
 
