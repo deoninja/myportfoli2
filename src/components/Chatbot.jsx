@@ -9,7 +9,7 @@ function Chatbot() {
   const [showSuggestions, setShowSuggestions] = useState(true);
   const chatRef = useRef(null);
 
-  
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
   const suggestedQuestions = [
     "What's your professional experience?",
@@ -25,6 +25,14 @@ function Chatbot() {
     setMessages((prev) => [...prev, userMessage]);
     setShowSuggestions(false);
     setInput('');
+
+    if (!apiKey) {
+      setMessages((prev) => [
+        ...prev,
+        { text: 'Please add your API key to the .env file.', sender: 'bot' },
+      ]);
+      return;
+    }
 
     try {
       const generationConfig = {
