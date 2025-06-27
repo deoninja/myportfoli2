@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaBriefcase } from 'react-icons/fa';
 
 function Experience() {
-  const [expanded, setExpanded] = useState({});
+  const [expanded, setExpanded] = useState([]);
 
   const experiences = [
     {
@@ -53,10 +53,11 @@ function Experience() {
   ];
 
   const toggleExpand = (index) => {
-    setExpanded((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
+    setExpanded((prev) => {
+      const newExpanded = [...prev];
+      newExpanded[index] = !newExpanded[index];
+      return newExpanded;
+    });
   };
 
   return (

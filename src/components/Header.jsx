@@ -11,11 +11,10 @@ import { IoMdArrowBack } from "react-icons/io";
   return (
     <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-4 px-4 sm:py-8 sm:px-6 shadow-xl">
       <Link to='/'>
-        <div className='flex justify-start items-center hover:cursor-pointer hover:text-blue-100'>
-        <IoMdArrowBack className='hover:cursor-pointer'/>
-        <button className='hover:cursor-pointer'> Back</button>
-        </div>
-        
+        <button className='flex justify-start items-center hover:cursor-pointer hover:text-blue-100'>
+          <IoMdArrowBack className='hover:cursor-pointer'/>
+          <span className='hover:cursor-pointer'> Back</span>
+        </button>
       </Link>
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">

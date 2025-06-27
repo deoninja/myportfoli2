@@ -40,7 +40,7 @@ const NavLink = ({ href, children }) => {
     <a
       href={href}
       onClick={handleClick}
-      className={`nav-link text-gray-700 hover:text-primary font-medium dark:text-gray-300 dark:hover:text-primary ${isActive ? 'text-primary dark:text-primary' : ''}`}
+      className={`text-gray-700 hover:text-primary font-medium dark:text-gray-300 dark:hover:text-primary ${isActive ? 'text-primary dark:text-primary' : ''}`}
     >
       {children}
     </a>

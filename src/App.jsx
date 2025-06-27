@@ -1,6 +1,3 @@
-import { useEffect } from 'react';
-
-
 import Resume from './pages/resume'
 import Index from './pages/Index'
 import Chatbot from './components/Chatbot';
@@ -13,13 +10,6 @@ import {
 
 
 function App() {
-  useEffect(() => {
-    const hash = window.location.hash;
-    if (!hash) {
-      const homeLink = document.querySelector('.nav-link[href="#home"]');
-      if (homeLink) homeLink.classList.add('active');
-    }
-  }, []);
   
 
   return (
