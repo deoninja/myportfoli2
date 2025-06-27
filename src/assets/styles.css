@@ -1,0 +1,174 @@
+:root {
+    --primary: #6366f1;
+    --secondary: #10b981;
+    --bg-light: #f8fafc;
+    --text-light: #1e293b;
+    --card-bg-light: #ffffff;
+    --section-bg-light: #f1f5f9;
+    --nav-bg-light: rgba(255, 255, 255, 0.9);
+    --border-light: #e2e8f0;
+    --gray-text-light: #374151; /* Darkened from #475569 for better contrast */
+    --gray-text-darker-light: #1f2a44; /* Darkened from #334155 for better contrast */
+    --bg-dark: #0f172a;
+    --text-dark: #f8fafc;
+    --card-bg-dark: #1e293b;
+    --section-bg-dark: #1e293b;
+    --nav-bg-dark: rgba(30, 41, 59, 0.9);
+    --border-dark: #475569;
+    --gray-text-dark: #94a3b8;
+    --gray-text-darker-dark: #cbd5e1;
+    --background-color: var(--bg-light);
+    --text-color: var(--text-light);
+    --card-background: var(--card-bg-light);
+    --section-background: var(--section-bg-light);
+    --nav-background: var(--nav-bg-light);
+    --border-color: var(--border-light);
+    --gray-text-color: var(--gray-text-light);
+    --gray-text-darker-color: var(--gray-text-darker-light);
+}
+
+
+
+.dark {
+    --background-color: var(--bg-dark);
+    --text-color: var(--text-dark);
+    --card-background: var(--card-bg-dark);
+    --section-background: var(--section-bg-dark);
+    --nav-background: var(--nav-bg-dark);
+    --border-color: var(--border-dark);
+    --gray-text-color: var(--gray-text-dark);
+    --gray-text-darker-color: var(--gray-text-darker-dark);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--text-color);
+}
+
+.skill-bar {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--border-color);
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transition: width 1s ease-in-out;
+}
+
+.project-card {
+    background: var(--card-background);
+    transition: all 0.3s ease;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.dark .project-card {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .project-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.18);
+}
+
+.project-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-image {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+*:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Theme Switch Styles */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.switch-knob {
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.theme-switch:focus-within {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}

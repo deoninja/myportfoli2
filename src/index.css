@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background-color: #f5f7fa;
+  --text-color: #333;
+  --card-background: #ffffff;
+  --nav-background: rgba(255, 255, 255, 0.8);
+}
+
+.dark {
+  --background-color: #1a202c;
+  --text-color: #e2e8f0;
+  --card-background: #2d3748;
+  --nav-background: rgba(45, 55, 72, 0.8);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
