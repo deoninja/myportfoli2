@@ -3,15 +3,15 @@ import chat from '../../assets/chatapp.png'
 import booking from '../../assets/roombooking.png'
 import interactive from '../../assets/interactive.webp'
 
-const ProjectCard = ({ image, alt, title, description, tags, tagStyles, liveDemo, codeRepo }) => (
-    <div className="project-card bg-white dark:bg-gray-800">
+const ProjectCard = ({ image, alt, title, description, tags, liveDemo, codeRepo }) => (
+    <div className="project-card bg-white dark:bg-gray-900">
       <img src={image} alt={alt} className="project-image" />
       <div className="project-content">
         <h3 className="font-semibold text-lg mb-2 text-gray-800 dark:text-white">{title}</h3>
         <p className="text-gray-600 text-sm mb-4 flex-grow dark:text-gray-300">{description}</p>
         <div className="flex flex-wrap gap-2 mt-auto">
           {tags.map((tag, index) => (
-            <span key={index} className={`px-2 py-1 text-xs rounded-full ${tagStyles[index]}`}>
+            <span key={index} className={`px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800 dark:bg-blue-700 dark:text-blue-200`}>
               {tag}
             </span>
           ))}
@@ -19,7 +19,7 @@ const ProjectCard = ({ image, alt, title, description, tags, tagStyles, liveDemo
         <div className="flex space-x-3 mt-6">
           <a
             href={liveDemo}
-            className="px-4 py-2 bg-primary text-white rounded-md text-sm font-medium bg-indigo-500 hover:bg-indigo-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+            className="px-4 py-2 bg-primary text-white rounded-md text-sm font-medium hover:bg-indigo-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
             aria-label={`Live demo of ${title}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -57,12 +57,8 @@ function ProjectsSection() {
             image={interactive}
             alt="Screenshot of Interactive Learning Platform"
             title="Interactive Learning"
-            description="A full-stack interactive learning platform designed to enhance user engagement through dynamic content and real-time feedback. Features include user authentication, progress tracking, and a rich text editor for content creation. Built with React.js for a responsive frontend, Node.js/Express for a robust backend API, and MongoDB for flexible data storage. Styled with Tailwind CSS for a modern and clean UI."
+            description="An interactive learning platform designed to enhance user engagement through dynamic content and real-time feedback. Features include user authentication, progress tracking, and a rich text editor for content creation. Built with React.js for a responsive frontend and styled with Tailwind CSS for a modern and clean UI."
             tags={['React.js',  'Tailwind CSS']}
-            tagStyles={[
-              'bg-blue-100 text-blue-800 dark:bg-blue-700 dark:text-blue-200',
-              'bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-200',
-            ]}
             liveDemo="https://productivity-hub-five.vercel.app/"
             codeRepo="https://github.com/deoninja/productivity-hub"
           />
@@ -72,11 +68,6 @@ function ProjectsSection() {
             title="Room Booking"
             description="Designed and implemented a dynamic room booking system featuring detailed descriptions, equipped with smart scheduling via a Next.js-powered interface, secure data management through Appwrite, and a sleek, responsive design styled with Tailwind CSS. Offers real-time availability updates and a user-friendly experience. Leverages modern web technologies to enhance functionality and streamline resource allocation."
             tags={['NextJS', 'Appwrite', 'Tailwind']}
-            tagStyles={[
-              'bg-indigo-100 text-indigo-800 dark:bg-indigo-700 dark:text-indigo-200',
-              'bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-200',
-              'bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-200',
-            ]}
             liveDemo="https://room-booking-sdth.vercel.app/"
             codeRepo="https://github.com/deoninja/Room-booking"
           />
@@ -86,14 +77,6 @@ function ProjectsSection() {
             title="Real-time Chat Application"
             description="Feature-rich chat platform with real-time messaging, typing indicators, and read receipts. Implemented with WebSockets for instant communication"
             tags={['React.js', 'Zustand', 'Tailwind', 'Socket.io', 'MongoDB', 'NodeJs']}
-            tagStyles={[
-              'bg-blue-100 text-blue-800 dark:bg-blue-700 dark:text-blue-200',
-              'bg-purple-100 text-purple-800 dark:bg-purple-600 dark:text-purple-200',
-              'bg-pink-100 text-pink-800 dark:bg-pink-800 dark:text-pink-200',
-              'bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-200',
-              'bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-200',
-              'bg-indigo-100 text-indigo-800 dark:bg-indigo-700 dark:text-indigo-200',
-            ]}
             liveDemo="https://mern-chat-app-0ogh.onrender.com/"
             codeRepo="https://github.com/deoninja/mern-chat-app"
           />
@@ -103,11 +86,6 @@ function ProjectsSection() {
             title="Snake Game"
             description="This is a modern, web-based implementation of the classic Snake game, built using React and deployed on Vercel. The game combines nostalgic gameplay with a sleek, customizable user interface, featuring dark/light mode toggling, sound effects, and responsive controls for both desktop and mobile devices. Players control a snake that grows longer as it consumes food, aiming to achieve the highest score possible without colliding with the walls or itself."
             tags={['React.js', 'Tailwind', 'Vercel']}
-            tagStyles={[
-              'bg-teal-100 text-teal-800 dark:bg-teal-700 dark:text-teal-100',
-              'bg-rose-100 text-rose-800 dark:bg-rose-700 dark:text-rose-100',
-              'bg-orange-100 text-orange-800 dark:bg-orange-700 dark:text-orange-100',
-            ]}
             liveDemo="https://snakegame-nine-omega.vercel.app/"
             codeRepo="https://github.com/deoninja/snakegame"
           />

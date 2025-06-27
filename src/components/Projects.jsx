@@ -6,8 +6,8 @@ function Projects() {
   const projects = [
     {
       title: 'Interactive Learning',
-      tech: 'React.js, Node.js, Express, MongoDB, Tailwind CSS',
-      description: 'A full-stack interactive learning platform designed to enhance user engagement through dynamic content and real-time feedback. Features include user authentication, progress tracking, and a rich text editor for content creation. Built with React.js for a responsive frontend, Node.js/Express for a robust backend API, and MongoDB for flexible data storage. Styled with Tailwind CSS for a modern and clean UI.',
+      tech: 'React.js, Tailwind CSS',
+      description: 'An interactive learning platform designed to enhance user engagement through dynamic content and real-time feedback. Features include user authentication, progress tracking, and a rich text editor for content creation. Built with React.js for a responsive frontend and styled with Tailwind CSS for a modern and clean UI.',
       tags: ['React.js', 'Tailwind CSS'],
       status: 'Live',
       liveDemo: 'https://productivity-hub-five.vercel.app/',
