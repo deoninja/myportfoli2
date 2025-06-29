@@ -19,7 +19,7 @@ const ProjectCard = ({ image, alt, title, description, tags, liveDemo, codeRepo 
         <div className="flex space-x-3 mt-6">
           <a
             href={liveDemo}
-            className="px-4 py-2 bg-primary text-white rounded-md text-sm font-medium hover:bg-indigo-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+            className="px-4 py-2 border-b-fuchsia-900 bg-red-700 text-white rounded-md text-sm font-medium hover:bg-red-800 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700"
             aria-label={`Live demo of ${title}`}
             target="_blank"
             rel="noopener noreferrer"
