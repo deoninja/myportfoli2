@@ -3,21 +3,40 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background-color: #f5f7fa;
-  --text-color: #333;
+  --background-color: #f8f9fa;
+  --text-color: #212529;
   --card-background: #ffffff;
   --nav-background: rgba(255, 255, 255, 0.8);
+  --primary-color: #007bff;
+  --gradient-start: #6366f1;
+  --gradient-end: #8b5cf6;
 }
 
 .dark {
-  --background-color: #1a202c;
-  --text-color: #e2e8f0;
-  --card-background: #2d3748;
-  --nav-background: rgba(45, 55, 72, 0.8);
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --card-background: #1e1e1e;
+  --nav-background: rgba(18, 18, 18, 0.8);
 }
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+  font-family: 'Inter', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  transition: all 0.3s ease;
+}
+
+.gradient-bg:hover {
+  filter: brightness(1.1);
 }
