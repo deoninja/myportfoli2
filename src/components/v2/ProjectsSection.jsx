@@ -28,7 +28,7 @@ const ProjectCard = ({ image, alt, title, description, tags, liveDemo, codeRepo 
           </a>
           <a
             href={codeRepo}
-            className="px-4 py-2 border border-primary text-primary rounded-md text-sm font-medium hover:bg-primary hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-white"
+            className="px-4 py-2 border border-primary text-primary rounded-md text-sm font-medium hover:bg-primary hover:text-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-primary dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-purple-500"
             aria-label={`Code repository for ${title}`}
             target="_blank"
             rel="noopener noreferrer"
