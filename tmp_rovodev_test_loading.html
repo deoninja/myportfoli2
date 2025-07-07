@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen Test</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .loading-screen {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            z-index: 50;
+        }
+        .progress-ring {
+            width: 128px;
+            height: 128px;
+            transform: rotate(-90deg);
+        }
+        .progress-circle {
+            fill: none;
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.5s ease;
+        }
+        .progress-bg {
+            stroke: #e5e7eb;
+        }
+        .progress-fill {
+            stroke: #6366f1;
+            stroke-dasharray: 351.86;
+        }
+        .loading-text {
+            position: absolute;
+            font-size: 24px;
+            font-weight: bold;
+            color: #6366f1;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .spinner {
+            animation: spin 2s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        
+        function LoadingTest() {
+            const [progress, setProgress] = useState(0);
+            const [isComplete, setIsComplete] = useState(false);
+            
+            useEffect(() => {
+                const interval = setInterval(() => {
+                    setProgress(prev => {
+                        if (prev >= 100) {
+                            setIsComplete(true);
+                            clearInterval(interval);
+                            return 100;
+                        }
+                        return prev + 2;
+                    });
+                }, 100);
+                
+                return () => clearInterval(interval);
+            }, []);
+            
+            if (isComplete) {
+                return (
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        height: '100vh',
+                        fontSize: '32px',
+                        color: '#10b981'
+                    }}>
+                        ✅ Loading Screen Fixed! Portfolio Ready!
+                    </div>
+                );
+            }
+            
+            const circumference = 2 * Math.PI * 56;
+            const strokeDashoffset = circumference - (progress / 100) * circumference;
+            
+            return (
+                <div className="loading-screen">
+                    <div style={{ position: 'relative', textAlign: 'center' }}>
+                        <h1 style={{ fontSize: '48px', margin: '0 0 20px 0', color: '#6366f1' }}>DT</h1>
+                        <div style={{ position: 'relative', display: 'inline-block' }}>
+                            <svg className="progress-ring" viewBox="0 0 128 128">
+                                <circle
+                                    className="progress-circle progress-bg"
+                                    cx="64"
+                                    cy="64"
+                                    r="56"
+                                />
+                                <circle
+                                    className="progress-circle progress-fill"
+                                    cx="64"
+                                    cy="64"
+                                    r="56"
+                                    style={{ strokeDashoffset }}
+                                />
+                            </svg>
+                            <div className="loading-text">{Math.round(progress)}%</div>
+                        </div>
+                        <p style={{ marginTop: '20px', color: '#6b7280' }}>
+                            {progress < 30 ? 'Initializing...' :
+                             progress < 60 ? 'Loading assets...' :
+                             progress < 90 ? 'Building interface...' :
+                             'Almost ready!'}
+                        </p>
+                        <div className="spinner" style={{
+                            width: '20px',
+                            height: '20px',
+                            border: '2px solid #e5e7eb',
+                            borderTop: '2px solid #6366f1',
+                            borderRadius: '50%',
+                            margin: '20px auto'
+                        }}></div>
+                    </div>
+                </div>
+            );
+        }
+        
+        ReactDOM.render(<LoadingTest />, document.getElementById('root'));
+    </script>
+</body>
+</html>

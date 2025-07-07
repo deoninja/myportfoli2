@@ -634,6 +634,59 @@ html {
   }
 }
 
+/* Loading Screen Animations */
+@keyframes gridFloat {
+  0%, 100% { transform: perspective(500px) rotateX(60deg) translateY(0px); }
+  50% { transform: perspective(500px) rotateX(60deg) translateY(-20px); }
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-down {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100px); opacity: 0; }
+}
+
+.loading-optimized {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.loading-ring {
+  filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.3));
+}
+
+.loading-text {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.slide-up {
+  animation: slide-up 0.8s ease-out;
+}
+
+.slide-down {
+  animation: slide-down 0.8s ease-out;
+}
+
 /* Back to top responsive adjustments */
 @media (max-width: 768px) {
   .back-to-top {

@@ -4,12 +4,9 @@ const PreloadAssets = ({ onAssetsLoaded }) => {
   useEffect(() => {
     const preloadImages = async () => {
       const imageUrls = [
-        '/src/assets/mypic.webp',
-        '/src/assets/interactive.webp',
-        '/src/assets/foodapp.webp',
-        '/src/assets/snake.png',
-        '/src/assets/chatapp.png',
-        '/src/assets/roombooking.png'
+        new URL('../assets/mypic.webp', import.meta.url).href,
+        new URL('../assets/interactive.webp', import.meta.url).href,
+        new URL('../assets/foodapp.webp', import.meta.url).href
       ];
 
       const imagePromises = imageUrls.map((url) => {

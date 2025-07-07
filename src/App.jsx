@@ -16,6 +16,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
   const [assetsLoaded, setAssetsLoaded] = useState(false);
+  
+  console.log('App render - isInitialized:', isInitialized, 'assetsLoaded:', assetsLoaded, 'isLoading:', isLoading);
 
   useEffect(() => {
     // Initialize app
@@ -27,6 +29,7 @@ function App() {
   }, []);
 
   const handleAssetsLoaded = () => {
+    console.log('Assets loaded callback triggered');
     setAssetsLoaded(true);
   };
 
@@ -35,11 +38,13 @@ function App() {
   };
 
   // Show loading screen until both initialization and assets are complete
-  if (!isInitialized || !assetsLoaded) {
+  if (!isInitialized || !assetsLoaded || isLoading) {
     return (
       <>
         <PreloadAssets onAssetsLoaded={handleAssetsLoaded} />
-        {isInitialized && assetsLoaded && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
+        {isInitialized && assetsLoaded && (
+          <LoadingScreen onLoadingComplete={handleLoadingComplete} />
+        )}
       </>
     );
   }
