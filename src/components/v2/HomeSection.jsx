@@ -1,9 +1,17 @@
 import image from '../../assets/mypicture.jpg';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 function HomeSection() {
+  const [ref, isVisible] = useScrollAnimation(0.2);
   return (
-    <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section 
+      ref={ref}
+      id="home" 
+      className="next-section section-transition pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+    >
+      <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
         <div className="order-2 md:order-1">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-gray-800 dark:text-white">
             Hi, I'm <span className="gradient-text">Deo</span>
