@@ -63,6 +63,15 @@ function ProjectsSection() {
           liveDemo="https://productivity-hub-five.vercel.app/"
           codeRepo="https://github.com/deoninja/productivity-hub"
         />
+                  <ProjectCard
+          image={foodapp}
+          alt="Screenshot of food-delivery-app-landing"
+          title="Food Delivery App landing Page"
+          description="This project is a modern and interactive landing page for FoodieExpress, a fictional food delivery application. The design is centered around a visually appealing hero section with a dynamic phone mockup that showcases the app's user interface. The landing page is designed to be engaging and to encourage users to download the app."
+          tags={['HTML5', 'CSS3', 'JavaScript (ES6+)']}
+          liveDemo="https://food-delivery-app-landing.vercel.app/"
+          codeRepo="https://github.com/deoninja/food-delivery-app-landing"
+        />
         <ProjectCard
           image={booking}
           alt="Screenshot of E-commerce Platform"
@@ -90,15 +99,7 @@ function ProjectsSection() {
           liveDemo="https://snakegame-nine-omega.vercel.app/"
           codeRepo="https://github.com/deoninja/snakegame"
         />
-          <ProjectCard
-          image={foodapp}
-          alt="Screenshot of food-delivery-app-landing"
-          title="Food Delivery App landing Page"
-          description="This project is a modern and interactive landing page for FoodieExpress, a fictional food delivery application. The design is centered around a visually appealing hero section with a dynamic phone mockup that showcases the app's user interface. The landing page is designed to be engaging and to encourage users to download the app."
-          tags={['HTML5', 'CSS3', 'JavaScript (ES6+)']}
-          liveDemo="https://food-delivery-app-landing.vercel.app/"
-          codeRepo="https://github.com/deoninja/food-delivery-app-landing"
-        />
+
       </div>
     </section>
   );
