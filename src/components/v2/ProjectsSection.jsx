@@ -2,6 +2,7 @@ import snake from '../../assets/snake.png';
 import chat from '../../assets/chatapp.png';
 import booking from '../../assets/roombooking.png';
 import interactive from '../../assets/interactive.webp';
+import foodapp from '../../assets/foodapp.webp';
 
 const ProjectCard = ({ image, alt, title, description, tags, liveDemo, codeRepo }) => (
   <div className="project-card bg-white dark:bg-gray-800/50 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
@@ -88,6 +89,15 @@ function ProjectsSection() {
           tags={['React.js', 'Tailwind', 'Vercel']}
           liveDemo="https://snakegame-nine-omega.vercel.app/"
           codeRepo="https://github.com/deoninja/snakegame"
+        />
+          <ProjectCard
+          image={foodapp}
+          alt="Screenshot of food-delivery-app-landing"
+          title="Food Delivery App landing Page"
+          description="This project is a modern and interactive landing page for FoodieExpress, a fictional food delivery application. The design is centered around a visually appealing hero section with a dynamic phone mockup that showcases the app's user interface. The landing page is designed to be engaging and to encourage users to download the app."
+          tags={['HTML5', 'CSS3', 'JavaScript (ES6+)']}
+          liveDemo="https://food-delivery-app-landing.vercel.app/"
+          codeRepo="https://github.com/deoninja/food-delivery-app-landing"
         />
       </div>
     </section>
