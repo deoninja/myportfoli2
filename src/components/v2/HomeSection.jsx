@@ -36,17 +36,17 @@ function HomeSection() {
           </div>
           <div className="mt-8 flex space-x-6">
             {[
-              { platform: 'github', url: '#' },
-              { platform: 'linkedin', url: '#' },
-              { platform: 'twitter', url: '#' },
-              { platform: 'instagram', url: '#' },
+              { platform: 'github', url: 'https://github.com/deoninja' },
+              { platform: 'linkedin', url: 'https://www.linkedin.com/in/deonin/' },
+              { platform: 'twitter', url: 'https://x.com/deonin' },
+              { platform: 'facebook', url: 'https://www.facebook.com/deo.trinidad' },
             ].map(({ platform, url }) => (
               <a
                 key={platform}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-colors dark:text-gray-400 dark:hover:text-primary"
+                className="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
                 aria-label={`${platform} Profile`}
               >
                 <i className={`fab fa-${platform} text-2xl`}></i>

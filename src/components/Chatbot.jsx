@@ -113,8 +113,8 @@ function Chatbot() {
   }, [messages]);
 
   return (
-    <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50">
-      <div className={`${isOpen ? 'block' : 'hidden'} w-full sm:w-80 bg-white dark:bg-darkBackground rounded-xl shadow-xl overflow-hidden max-w-[90vw]`}>
+    <div className="fixed bottom-4 sm:bottom-6 left-4 sm:left-6 z-50">
+      <div className={`${isOpen ? 'block' : 'hidden'} w-full sm:w-80 bg-white dark:bg-darkBackground rounded-xl shadow-xl overflow-hidden max-w-[90vw] mb-4`}>
         <div className="bg-blue-600 text-white p-3 sm:p-4 flex justify-between items-center">
           <h3 className="font-bold text-sm sm:text-base">Resume AI Assistant</h3>
           <button onClick={() => setIsOpen(false)} className="text-white hover:text-blue-200">
@@ -170,7 +170,8 @@ function Chatbot() {
       </div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="floating-btn bg-blue-500 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-600 transition"
+        className="floating-btn bg-gradient-to-r from-blue-500 to-indigo-600 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-lg flex items-center justify-center hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 hover:scale-110 backdrop-blur-md border border-white/20"
+        aria-label="Open AI Assistant"
       >
         <FaCommentDots className="text-lg sm:text-xl" />
       </button>

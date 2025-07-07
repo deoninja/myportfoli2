@@ -9,7 +9,6 @@ const ScrollProgress = () => {
     { id: 'hero', name: 'Hero', icon: '🚀' },
     { id: 'home', name: 'About', icon: '👋' },
     { id: 'about', name: 'Story', icon: '📖' },
-    { id: 'skills', name: 'Skills', icon: '⚡' },
     { id: 'projects', name: 'Projects', icon: '💼' },
     { id: 'contact', name: 'Contact', icon: '📧' }
   ];
@@ -26,7 +25,7 @@ const ScrollProgress = () => {
     };
 
     const findActiveSection = () => {
-      const sections = ['hero', 'home', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['hero', 'home', 'about', 'projects', 'contact'];
       let current = 'hero';
 
       for (const sectionId of sections) {

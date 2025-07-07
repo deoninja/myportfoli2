@@ -7,10 +7,10 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center space-x-6 mb-4">
           {[
-            { platform: 'github', url: '#' },
-            { platform: 'linkedin', url: '#' },
-            { platform: 'twitter', url: '#' },
-            { platform: 'instagram', url: '#' },
+            { platform: 'github', url: 'https://github.com/deoninja' },
+            { platform: 'linkedin', url: 'https://www.linkedin.com/in/deonin/' },
+            { platform: 'twitter', url: 'https://x.com/deonin' },
+            { platform: 'facebook', url: 'https://www.facebook.com/deo.trinidad' },
           ].map(({ platform, url }) => (
             <a
               key={platform}

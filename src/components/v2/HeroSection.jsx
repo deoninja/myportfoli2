@@ -112,7 +112,7 @@ const HeroSection = () => {
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         {/* Animated Badge */}
         <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 dark:bg-black/20 backdrop-blur-sm border border-indigo-200/30 dark:border-indigo-500/30 mb-8 animate-pulse">
-          <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2 animate-ping"></span>
+          <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-ping"></span>
           <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Available for new projects</span>
         </div>
 

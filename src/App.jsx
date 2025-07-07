@@ -39,14 +39,13 @@ function App() {
     return (
       <>
         <PreloadAssets onAssetsLoaded={handleAssetsLoaded} />
-        {isInitialized && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
+        {isInitialized && assetsLoaded && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
       </>
     );
   }
 
   return (
     <>
-      {isLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
       <div className={`transition-opacity duration-1000 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
         <Router>
           <Routes>

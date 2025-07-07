@@ -54,7 +54,7 @@ export const useStaggeredAnimation = (itemCount, delay = 100) => {
       },
       {
         threshold: 0.1,
-        rootMargin: '50px 0px -50px 0px'
+        rootMargin: '200px 0px -50px 0px'
       }
     );
 
