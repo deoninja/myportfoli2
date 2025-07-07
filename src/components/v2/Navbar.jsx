@@ -100,6 +100,7 @@ function Navbar() {
           <div className="hidden md:flex ml-10 items-center space-x-8">
             <NavLink href="#home">Home</NavLink>
             <NavLink href="#about">About</NavLink>
+            <NavLink href="#skills">Skills</NavLink>
             <NavLink href="#projects">Projects</NavLink>
             <NavLink href="#contact">Contact</NavLink>
             <button
@@ -153,7 +154,7 @@ function Navbar() {
         className={`md:hidden shadow-lg bg-white dark:bg-darkBackground ${isMobileMenuOpen ? '' : 'hidden'}`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {['home', 'about', 'projects', 'contact'].map((section) => (
+          {['home', 'about', 'skills', 'projects', 'contact'].map((section) => (
             <a
               key={section}
               href={`#${section}`}
