@@ -2,17 +2,17 @@ import React from 'react';
 import { FaEnvelope, FaPhone, FaDownload, FaLinkedin, FaGithub } from 'react-icons/fa';
 import mypic from '../assets/mypicture.jpg'
 import resume from '../assets/new_resume.pdf'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { IoMdArrowBack } from "react-icons/io";
 
 
-  const Header = () => {
+const Header = () => {
 
   return (
     <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-4 px-4 sm:py-8 sm:px-6 shadow-xl">
       <Link to='/'>
         <button className='flex justify-start items-center hover:cursor-pointer hover:text-blue-100'>
-          <IoMdArrowBack className='hover:cursor-pointer'/>
+          <IoMdArrowBack className='hover:cursor-pointer' />
           <span className='hover:cursor-pointer'> Back</span>
         </button>
       </Link>
@@ -20,7 +20,8 @@ import { IoMdArrowBack } from "react-icons/io";
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left mb-4 sm:mb-6 md:mb-0">
             <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight">Deoniño Trinidad</h1>
-            <p className="mt-1 sm:mt-2 text-lg sm:text-xl md:text-2xl text-blue-100">Full Stack Web Developer</p>
+            <p className="mt-1 sm:mt-2 text-lg sm:text-xl md:text-2xl text-blue-100">Frontend Web Developer</p>
+            <p className="text-sm sm:text-base text-blue-200">Lower Sakura, Mahabang Parang, Angono Rizal PH</p>
             <div className="mt-2 sm:mt-3 flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3">
               <a
                 href="mailto:deotri4@gmail.com"

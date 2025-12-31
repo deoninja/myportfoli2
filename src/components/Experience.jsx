@@ -6,38 +6,34 @@ function Experience() {
 
   const experiences = [
     {
-      title: 'Senior Frontend Engineer',
-      company: '8Box Solutions, Quezon City',
+      title: 'Frontend Engineer',
+      company: '8box Solutions, Quezon City',
       duration: 'September 2024 - Present',
       responsibilities: [
-        'Led development of 10+ web applications using React',
-        'Improved application performance by 40% through code optimization',
-        'Mentored junior developers and conducted code reviews',
-        'MERN MOngoDB,Express, React, Node',
-        'JAVA J2ee',
+        'Led the development of 10+ React-based web applications, ensuring scalable architecture and interactive user interfaces.',
+        'Boosted application performance by 40% through advanced optimization techniques including lazy loading, memoization, and code splitting.',
+        'Conducted rigorous code reviews and mentored junior developers, fostering best practices for clean, maintainable, and efficient code.',
       ],
     },
     {
-      title: 'React.js / Vue.js Developer',
+      title: 'React/Vue Developer',
       company: 'LBTEK Systems, Caloocan',
       duration: 'January 2021 - September 2024',
       responsibilities: [
-        'Developed and maintained admin panel interfaces using React.js and Vue.js.',
-        'Integrated REST APIs into the front-end for seamless data flow.',
-        'Deployed web applications to production environments, ensuring smooth transitions from development to live operations.',
-        'Maintained and debugged web-based applications, resolving issues quickly to minimize downtime.',
-        'Used version control tools like Git and Bitbucket to manage and track code changes.',
+        'Built and maintained dynamic admin dashboards, incorporating user login and document upload functionalities.',
+        'Integrated REST APIs for real-time data flow, ensuring seamless user experiences and efficient backend communication.',
+        'Managed production deployments, ensuring 99.9% uptime post-release and robust cross-browser compatibility.',
+        'Utilized Git/Bitbucket for version control and actively collaborated in an Agile development environment.',
       ],
     },
     {
-      title: 'WordPress/Laravel Developer',
+      title: 'WordPress / Laravel Developer',
       company: 'Hivelabs, Malabon',
       duration: 'August 2020 - January 2021',
       responsibilities: [
-        'Designed and developed custom WordPress themes and Laravel-based web applications.',
-        'Delivered fully functional web solutions with short turnaround times.',
-        'Assisted in the maintenance and troubleshooting of existing web applications.',
-        'Collaborated using version control systems to manage source code efficiently.',
+        'Delivered custom WordPress themes and robust Laravel solutions, ensuring responsive UI designs within tight deadlines.',
+        'Handled extensive bug fixing, troubleshooting, and code refactoring for legacy systems, improving overall application stability.',
+        'Implemented CMS-integrated functionality, focusing on intuitive user experience and maintainable code.',
       ],
     },
     {
@@ -45,9 +41,7 @@ function Experience() {
       company: 'Premiere Computer Learning Center, Parañaque',
       duration: 'June 2019 - August 2020',
       responsibilities: [
-        'Taught fundamental and advanced computer skills, including introductory programming.',
-        'Created lesson plans and ensured the efficient operation of the computer laboratory.',
-        'Provided technical support and maintenance for software and hardware setups.',
+        'Delivered lessons in basic to intermediate programming and computer skills, enhancing foundational understanding.',
       ],
     },
   ];

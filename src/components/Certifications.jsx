@@ -3,9 +3,10 @@ import { FaAward } from 'react-icons/fa';
 
 function Certifications() {
   const certifications = [
-    { title: 'Advanced Level of Software Engineering', issuer: 'Coursebank ', year: '2024' },
-    { title: 'JavaScript Algorithms and Data Structures', issuer: 'freeCodeCamp ', year: '2024' },
-    { title: 'Responsive Web Design', issuer: 'freeCodeCamp', year: '2019' },
+    { title: 'React (Basic) Certificate', issuer: 'HackerRank ', year: 'Oct. 2025' },
+    { title: 'Web Development Fundamentals', issuer: 'IBM ', year: 'Oct. 2025' },
+    { title: 'JavaScript Algorithms & Data Structures', issuer: 'freeCodeCamp ', year: 'Jun 2024' },
+    { title: 'Responsive Web Design', issuer: 'freeCodeCamp', year: 'Apr 2019' },
   ];
 
   return (

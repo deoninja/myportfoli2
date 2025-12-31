@@ -10,8 +10,8 @@ function Education() {
       </h2>
       <div>
         <h3 className="text-base sm:text-lg font-semibold text-gray-800">BS in Information Technology</h3>
-        <p className="text-sm sm:text-base text-gray-600">Informatics College • 2015 - 2019</p>
-        <p className="mt-1 sm:mt-2 text-sm sm:text-base text-gray-700">Focused my specialization on Web Development and Database Systems, which allowed me to build a strong foundation in creating and managing web-based applications and data-driven solutions.</p>
+        <h4 className="text-sm sm:text-base font-medium text-gray-700">Informatics College – NorthGate Alabang</h4>
+        <p className="text-xs sm:text-sm text-gray-600">Alabang, Muntinlupa City | June 2015 – May 2018</p>
       </div>
     </section>
   );

@@ -9,12 +9,9 @@ function ProfessionalSummary() {
         Professional Summary
       </h2>
       <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-        Passionate Full Stack Web Developer with 5+ years of experience crafting modern, responsive web applications. 
-        Specialized in JavaScript ecosystems including React.js and Vue.js for frontend, and Node.js with Laravel for backend development. 
-        Proven track record of delivering high-performance solutions with clean, maintainable code. 
-        Strong advocate for best practices, performance optimization, and intuitive UX design.
+        Highly proficient and performance-driven Front-End Developer with over 5 years of experience specializing in designing and implementing interactive, scalable, and responsive user interfaces. Expert in JavaScript, React.js, and Vue.js, with a strong focus on clean code, UI/UX best practices, and optimizing web applications for speed and scalability. Proven ability to integrate complex APIs, manage real-time data flows, and build dynamic features like chat windows and user dashboards, including experience with AI-related tools.
       </p>
-    </section>
+    </section >
   );
 }
 
