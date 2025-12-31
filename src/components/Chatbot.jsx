@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaTimes, FaCommentDots, FaPaperPlane } from 'react-icons/fa';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { resumeData } from '../assets/resumeData';
 
 function Chatbot() {
@@ -35,27 +36,21 @@ function Chatbot() {
     }
 
     try {
-      const generationConfig = {
-        temperature: 0.7,
-        topP: 0.95,
-        topK: 64,
-        maxOutputTokens: 65536,
-        responseMimeType: 'text/plain',
-      };
+      const genAI = new GoogleGenerativeAI(apiKey);
+      const model = genAI.getGenerativeModel({
+        model: "gemini-2.5-flash-lite",
+        systemInstruction: `You are in charge to answer every question based on the following resume:\n\n${resumeData}`,
+      });
 
-      const data = {
-        generationConfig,
-        contents: [
+      const chat = model.startChat({
+        history: [
           {
             role: 'user',
             parts: [{ text: 'When do you graduated in college?' }],
           },
           {
             role: 'model',
-            parts: [
-              { text: 'The user is asking about the graduation date from college based on the provided resume. I need to look at the EDUCATION section and extract the graduation month and year.\n\nFrom the EDUCATION section:\nInformatics College, NorthGate Alabang — BS Information Technology\nJUNE 2015 - MAY 2018\n\nThe graduation date is May 2018.' },
-              { text: 'Based on the resume, Deoniño Trinidad graduated college in **May 2018**.' },
-            ],
+            parts: [{ text: 'Based on the resume, Deoniño Trinidad graduated college in **May 2018**.' }],
           },
           {
             role: 'user',
@@ -63,40 +58,19 @@ function Chatbot() {
           },
           {
             role: 'model',
-            parts: [
-              { text: 'The user is asking about the school Deoniño Trinidad graduated from. I need to look at the EDUCATION section of the resume to find this information. The resume states "Informatics College, NorthGate Alabang" under the EDUCATION section.' },
-              { text: 'Based on the resume, Deoniño Trinidad graduated from **Informatics College, NorthGate Alabang**.' },
-            ],
-          },
-          {
-            role: 'user',
-            parts: [{ text: message }],
+            parts: [{ text: 'Based on the resume, Deoniño Trinidad graduated from **Informatics College, NorthGate Alabang**.' }],
           },
         ],
-        systemInstruction: {
-          role: 'user',
-          parts: [{ text: `You are in charge to answer every question based on the following resume:\n\n${resumeData}` }],
+        generationConfig: {
+          maxOutputTokens: 1000,
         },
-      };
+      });
 
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-thinking-exp-01-21:generateContent?key=${apiKey}`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const result = await chat.sendMessage(message);
+      const response = await result.response;
+      const text = response.text();
 
-      if (!response.ok) {
-        throw new Error(`API request failed with status ${response.status}`);
-      }
-
-      const result = await response.json();
-      const botResponseText = result.candidates[0].content.parts[0].text;
-      setMessages((prev) => [...prev, { text: botResponseText, sender: 'bot' }]);
+      setMessages((prev) => [...prev, { text: text, sender: 'bot' }]);
     } catch (error) {
       console.error('Error fetching Gemini API:', error);
       setMessages((prev) => [
